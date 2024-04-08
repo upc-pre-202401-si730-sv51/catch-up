@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-footer-content',
@@ -6,5 +7,4 @@ import { Component } from '@angular/core';
   styleUrl: './footer-content.component.css'
 })
 export class FooterContentComponent {
-
 }

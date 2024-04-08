@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { ArticleListComponent } from './news/components/article-list/article-list.component';
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {NgOptimizedImage} from "@angular/common";
@@ -20,13 +20,23 @@ import {NewsApiService} from "./news/services/news-api.service";
 import {LogoApiService} from "./shared/services/logo-api.service";
 import { FooterContentComponent } from './public/components/footer-content/footer-content.component';
 import { SideNavigationBarComponent } from './public/components/side-navigation-bar/side-navigation-bar.component';
+import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import { LanguageSwitcherComponent } from './public/components/language-switcher/language-switcher.component';
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
+// HttpLoaderFactory function
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 @NgModule({
   declarations: [
     AppComponent,
     ArticleListComponent,
     FooterContentComponent,
-    SideNavigationBarComponent
+    SideNavigationBarComponent,
+    LanguageSwitcherComponent
   ],
   imports: [
     BrowserModule,
@@ -35,13 +45,22 @@ import { SideNavigationBarComponent } from './public/components/side-navigation-
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
+    MatButtonToggleModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     provideAnimationsAsync(),
