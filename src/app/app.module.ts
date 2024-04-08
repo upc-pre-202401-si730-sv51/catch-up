@@ -19,12 +19,16 @@ import {LayoutModule} from "@angular/cdk/layout";
 import {NewsApiService} from "./news/services/news-api.service";
 import {LogoApiService} from "./shared/services/logo-api.service";
 import { FooterContentComponent } from './public/components/footer-content/footer-content.component';
+import { SideNavigationBarComponent } from './public/components/side-navigation-bar/side-navigation-bar.component';
+import { SourceListItemComponent } from './news/components/source-list-item/source-list-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleListComponent,
-    FooterContentComponent
+    FooterContentComponent,
+    SideNavigationBarComponent,
+    SourceListItemComponent
   ],
   imports: [
     BrowserModule,
