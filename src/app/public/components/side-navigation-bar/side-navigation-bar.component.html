@@ -4,7 +4,12 @@
     <mat-nav-list>
       <mat-list-item (click)="onSourceSelected(source);drawer.toggle();"
                      *ngFor="let source of sources">
-        <app-source-list-item [source]="source"/>
+        <img [alt]="source.name"
+             [ngSrc]="source.urlToLogo"
+             height="60"
+             width="60"
+             matListItemAvatar>
+        <p matListItemLine><span>{{ source.name }}</span></p>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
