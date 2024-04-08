@@ -18,11 +18,13 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {LayoutModule} from "@angular/cdk/layout";
 import {NewsApiService} from "./news/services/news-api.service";
 import {LogoApiService} from "./shared/services/logo-api.service";
+import { FooterContentComponent } from './public/components/footer-content/footer-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleListComponent
+    ArticleListComponent,
+    FooterContentComponent
   ],
   imports: [
     BrowserModule,
