@@ -35,7 +35,7 @@ export default {
       </p>
     </template>
     <template #footer>
-      <a :href="article.url" target="_blank">Read More</a>
+      <a :href="article.url" target="_blank">{{ $t('read-more') }}</a>
     </template>
   </pv-card>
 </template>
