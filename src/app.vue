@@ -4,10 +4,11 @@
   import SideMenu from "./news/components/side-menu.component.vue";
   import ArticleList from "./news/components/article-list.component.vue";
   import UnavailableContent from "./news/components/unavailable-content.component.vue";
+  import LanguageSwitcher from "./public/components/language-switcher.component.vue";
 
   export default {
     name: 'App',
-    components: {UnavailableContent, ArticleList, SideMenu},
+    components: {LanguageSwitcher, UnavailableContent, ArticleList, SideMenu},
     data() {
       return {
         sidebarVisible: false,
@@ -68,6 +69,9 @@
         <template #start>
           <pv-button icon="pi pi-bars" label="CatchUp" text @click="toggleSidebar"/>
           <side-menu v-model:visible="sidebarVisible" v-on:source-selected="setSource"/>
+        </template>
+        <template #end>
+          <language-switcher/>
         </template>
       </pv-menubar>
     </div>
