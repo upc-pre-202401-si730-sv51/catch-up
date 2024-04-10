@@ -1,4 +1,6 @@
 <script>
+
+
 import ArticleCard from "./article-card.component.vue";
 
 export default {
