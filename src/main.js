@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './app.vue'
+import i18n from "./i18n.js";
 
 // Add PrimeVue UI Library
 import PrimeVue from "primevue/config";
@@ -25,6 +26,7 @@ import Menu         from "primevue/menu";
 import Menubar      from "primevue/menubar";
 import Toolbar      from "primevue/toolbar";
 
+
 const app = createApp(App);
 
 // Add configuration for PrimeVue Plugin and components
@@ -37,6 +39,9 @@ app.use(PrimeVue, { ripple: true })
     .component('pv-menu', Menu)
     .component('pv-menubar', Menubar)
     .component('pv-toolbar', Toolbar);
+
+// Add i18n configuration
+app.use(i18n);
 
 // Mount the app
 app.mount('#app');
