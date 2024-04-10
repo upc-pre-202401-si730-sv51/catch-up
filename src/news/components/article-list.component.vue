@@ -17,7 +17,7 @@ export default {
 
 <template>
   <div v-for="article in articles">
-    <article-card article="article"/>
+    <article-card :article="article"/>
   </div>
 </template>
 

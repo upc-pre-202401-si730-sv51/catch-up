@@ -1,11 +1,8 @@
 <script>
 import {NewsApiService} from "../services/news-api.service.js";
-import PvSidebar from "../../main.js";
-import PvAvatar from "../../main.js";
 
 export default {
   name: "side-menu",
-  components: {PvAvatar, PvSidebar},
   props: {
     visible: Boolean
   },
